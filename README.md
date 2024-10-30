@@ -8,23 +8,28 @@ This repository contains the contents of an analysis into the impact of wildfire
 
 
 ## Licenses and API Documentation
-#TODO Fill out API Documentation
+### Wildfire Data Acquisition
+To perform the wildfire smoke analysis, the complete [Wildfire dataset](https://www.sciencebase.gov/catalog/item/61aa537dd34eb622f699df81) was retrieved from a US government repository. The downloaded data schema can be found below in the data schema section labelled "USGS_Wildland_Fire_Combined_Dataset.json", however, this JSON was too large to store directly on GIT. Preliminary processing was performed to filter the wildfire data to wildfires occuring between 1961-2021, and within 650 (0r 1800) miles from Norman, OK. The distance was computed using a wildfire user module developed by Dr. David W. McDonald for use in DATA 512, a course in the UW MS Data Science degree program.
 
-Modeling inspiration was taken from fellow student Jake Flynn.
+### AQI Data Acquisition
+The AQI Data Acquistion notebook extracted the historical AQI data from the US Environmental Protection Agency (EPA) Air Quality Service (AQS) API. The [documentation](https://aqs.epa.gov/aqsweb/documents/data_api.html) for the API provides definitions of the different call parameter and examples of the various calls that can be made to the API.
+Specifically, this analyses makes API requests for AQI data from Cleveland county (home to Norman), and nearby Oklahoma county (home to Oklahoma City) in Oklahoma. 
 
-Lastly, this assignment, and significant portions of the "data_acquisition_aqi.ipynb.ipynb" and "data_acquisition_wildfire.ipnyb" files were developed by Dr. David W. McDonald for use in DATA 512, a course in the UW MS Data Science degree program. This code is provided under the [Creative Commons](https://creativecommons.org) [CC-BY license](https://creativecommons.org/licenses/by/4.0/). Revision 1.2 - September 16, 2024
+### Contributions
+Modeling ideation in "modeling.ipynb" was performed with collaboration from fellow student Jake Flynn, while AQI Estimate analysis was performed with collaboration from fellow student Sid Gurajala. Lastly, this assignment, and significant portions of the "data_acquisition_aqi.ipynb.ipynb" and "data_acquisition_wildfire.ipnyb" files were developed by Dr. David W. McDonald for use in DATA 512, a course in the UW MS Data Science degree program. This code is provided under the [Creative Commons](https://creativecommons.org) [CC-BY license](https://creativecommons.org/licenses/by/4.0/). Revision 1.2 - September 16, 2024
 
 ## Repository Structure
+Note that all files below denoted with (*) have been omitted from the actual repository as they are too large to upload on git. For the files in the data_intermediate, a subset denoted by the suffix "_SMALL" has been included for representation purposes. 
 ```markdown
 
-├── data_clean/                                           # Folder containing the cleaned data
-│   ├── #TODO Move norman_wildfires_SI_yearly_average.csv                           # CSV with the final, cleaned and processed AQI estimate data
-│   └── #TODO.csv                       # CSV with the final, cleaned and processed widfire smoke estimate data
-├── data_intermediate/                                    # Folder containing the intermediate data #TODO note a handful of intermediate files were too large to be stored on GIT
-│   ├── rev_ids.json                                        # JSON with the revision ids for the latest wikipedia pages
-│   └── scores_dict.json                                    # JSON with the ORES LiftWing score associated with each article
+├── data_clean/                                # Folder containing the cleaned data
+│   ├── norman_aqi_yearly_average.csv                       # CSV with the final, cleaned and processed AQI estimate data
+│   └── norman_wildfires_SI_yearly_average.csv                       # CSV with the final, cleaned and processed widfire smoke estimate data
+├── data_intermediate/                                    # Folder containing the intermediate data (Note the real files were too large to be stored on GIT, so the files included here are smaller, sample files)
+│   ├── *full_wildfires_SMALL.json                                        # JSON with all of the extracted wildfire data
+│   └── *norman_wildfires_SI_SMALL.json                                    # JSON with the processed and filtered wildfire data
 ├── data_raw/                                             # Folder containing the raw data
-│   └── USGS_WIldland_Fire_CombinedDataset.json                  # JSON containing all of the raw wildfire data
+│   └── *USGS_WIldland_Fire_CombinedDataset.json                  # JSON containing all of the raw wildfire data (note this file was to large to upload, but can be downloaded directly from [here](https://www.sciencebase.gov/catalog/item/61aa537dd34eb622f699df81))
 ├── notebooks/                                            # Source code
 │   ├── data_acquisition_aqi.ipynb                              # Notebook to make the api calls to extract,s tore, and process the aqi data
 │   ├── data_acquisition_wildfire.ipynb                              # Notebook to extract the wildfire data from the raw JSON
