@@ -9,7 +9,7 @@ This repository contains the contents of an analysis into the impact of wildfire
 
 ## Licenses and API Documentation
 ### Wildfire Data Acquisition
-To perform the wildfire smoke analysis, the complete [Wildfire dataset](https://www.sciencebase.gov/catalog/item/61aa537dd34eb622f699df81) was retrieved from a US government repository. The downloaded data schema can be found below in the data schema section labelled "USGS_Wildland_Fire_Combined_Dataset.json", however, this JSON was too large to store directly on GIT. Preliminary processing was performed to filter the wildfire data to wildfires occuring between 1961-2021, and within 650 (0r 1800) miles from Norman, OK. The distance was computed using a wildfire user module developed by Dr. David W. McDonald for use in DATA 512, a course in the UW MS Data Science degree program.
+To perform the wildfire smoke analysis, the complete [wildfire dataset](https://www.sciencebase.gov/catalog/item/61aa537dd34eb622f699df81) was retrieved from a US government repository. The downloaded data schema can be found below in the data schema section labelled "USGS_Wildland_Fire_Combined_Dataset.json", however, this JSON was too large to store directly on GIT. Preliminary processing was performed to filter the wildfire data to wildfires occuring between 1961-2021, and within 650 (0r 1800) miles from Norman, OK. The distance was computed using a wildfire user module developed by Dr. David W. McDonald for use in DATA 512, a course in the UW MS Data Science degree program.
 
 ### AQI Data Acquisition
 The AQI Data Acquistion notebook extracted the historical AQI data from the US Environmental Protection Agency (EPA) Air Quality Service (AQS) API. The [documentation](https://aqs.epa.gov/aqsweb/documents/data_api.html) for the API provides definitions of the different call parameter and examples of the various calls that can be made to the API.
@@ -29,7 +29,7 @@ Note that all files below denoted with (*) have been omitted from the actual rep
 │   ├── *full_wildfires_SMALL.json                      # JSON with all of the extracted wildfire data
 │   └── *norman_wildfires_SI_SMALL.json                 # JSON with the processed and filtered wildfire data
 ├── data_raw/                                       # Folder containing the raw data
-│   └── *USGS_WIldland_Fire_CombinedDataset.json        # JSON containing all of the raw wildfire data (Note this file was to large to upload, but can be downloaded directly from [here](https://www.sciencebase.gov/catalog/item/61aa537dd34eb622f699df81))
+│   └── *USGS_Wildland_Fire_CombinedDataset.json        # JSON containing all of the raw wildfire data (Note this file was to large to upload, but can be downloaded directly from [here](https://www.sciencebase.gov/catalog/item/61aa537dd34eb622f699df81))
 ├── notebooks/                                      # Source code
 │   ├── data_acquisition_aqi.ipynb                      # Notebook to make the api calls to extract, store, and process the aqi data
 │   ├── data_acquisition_wildfire.ipynb                 # Notebook to extract the wildfire data from the raw JSON
@@ -86,9 +86,9 @@ Note that this JSON contains a large number of fields, most of which were define
                                 "type": "float64",
                                 "description": "The amount of burned GIS acres"
                                 }
-                        }
-                }
-            },
+                            }
+                    }
+                },
             "geometry":{
                 "type": "object",
                 "description": "GIS Ring data for the fire location",
@@ -101,9 +101,7 @@ Note that this JSON contains a large number of fields, most of which were define
                             }
                         }
                 }
-            }
-        }
-    
+            }    
 }
 ```
 
