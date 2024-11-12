@@ -1,5 +1,5 @@
 api_keys.txt
-data_raw/USGS_Wildland_Fire_Combined_Dataset.json
+data_raw/*
 data_intermediate/full_wildfires.json
 data_intermediate/norman_wildfires_SI.json
 data_intermediate/norman_wildfires_SI_1800.json
