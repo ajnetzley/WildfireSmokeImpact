@@ -18,7 +18,7 @@ Specifically, this analyses makes API requests for AQI data from Cleveland count
 ### Contributions
 Modeling ideation in "modeling.ipynb" was performed with collaboration from fellow student Jake Flynn, while AQI Estimate analysis was performed with collaboration from fellow student Sid Gurajala. Lastly, this assignment, and significant portions of the "data_acquisition_aqi.ipynb.ipynb" and "data_acquisition_wildfire.ipnyb" files were developed by Dr. David W. McDonald for use in DATA 512, a course in the UW MS Data Science degree program. This code is provided under the [Creative Commons](https://creativecommons.org) [CC-BY license](https://creativecommons.org/licenses/by/4.0/). Revision 1.2 - September 16, 2024
 
-### Reproducibility Guidelines
+## Reproducibility Guidelines
 #TODO
 
 ## Repository Structure
@@ -54,7 +54,7 @@ Note that all files below denoted with (*) have been omitted from the actual rep
 ## Data Schema
 
 ### Cleaned Data
-### asthma_non-smoker_survey_cleaned.csv
+#### asthma_non-smoker_survey_cleaned.csv
 ```markdown
 
 | Column Name            | Data Type | Data Description                                 
@@ -64,7 +64,7 @@ Note that all files below denoted with (*) have been omitted from the actual rep
 
 ```
 
-### forecasted_smoke_estimate.csv
+#### forecasted_smoke_estimate.csv
 ```markdown
 
 | Column Name            | Data Type | Data Description                                 
@@ -75,7 +75,7 @@ Note that all files below denoted with (*) have been omitted from the actual rep
 | 'Lower_bound'          | 'float64' | The 95% CI lower bound of the Smoke Estimate score
 ```
 
-### norman_aqi_yearly_average.csv
+#### norman_aqi_yearly_average.csv
 ```markdown
 
 | Column Name            | Data Type | Data Description                                 
@@ -85,7 +85,7 @@ Note that all files below denoted with (*) have been omitted from the actual rep
 
 ```
 
-### norman_wildfires_SI_yearly_average.csv
+#### norman_wildfires_SI_yearly_average.csv
 ```markdown
 
 | Column Name      | Data Type | Data Description                                 
@@ -96,7 +96,7 @@ Note that all files below denoted with (*) have been omitted from the actual rep
 ```
 
 ### Intermediate Data
-### full_wildfire(_SMALL).json
+#### full_wildfire(_SMALL).json
 Note that this JSON contains a large number of fields, most of which were defined in the original dataset, and most of which we do not end up using. Listed below are all the relevant attribtues which were used during analysis.
 ```json
 {
@@ -140,7 +140,7 @@ Note that this JSON contains a large number of fields, most of which were define
 ```
 
 
-### norman_wildfires_SI(_SMALL).json
+#### norman_wildfires_SI(_SMALL).json
 Note that this JSON contains 32 fields, 30 of which were defined in the original dataset, and most of which we do not end up using. This json also has a very similar structure to that of the full_wildfires.json described above, but with a few new attributes. Listed below are all the relevant attributes which were used during analysis.
 
 ```json
@@ -175,7 +175,7 @@ Note that this JSON contains 32 fields, 30 of which were defined in the original
 }
 ```
 ### Raw Data
-### oklahoma_brfss_2000_raw.csv (with the same fromat as ...2003-2010, and ...2011-2023)
+#### oklahoma_brfss_2000_raw.csv (with the same fromat as ...2003-2010, and ...2011-2023)
 In their raw form as downloaded from the OK2Share website, these datasets were not in a clean tabular format, and therefore required extensive post processing (see data_processing_asthma.csv). Shown below is the sample input format (and actual raw data of 2000) to get a sense of data format. Visit the OK2Share [website](https://www.health.state.ok.us/stats/Health_Surveys/BRFSS/index.shtml) and select the relevant smoking and asthma fields in the BRFSS crosstab survey data request to obtain an html version.
 ```markdown
 
@@ -201,5 +201,5 @@ In their raw form as downloaded from the OK2Share website, these datasets were n
 ```
 
 
-### USGS_Wildland_Fire_Combined_Dataset.json
+#### USGS_Wildland_Fire_Combined_Dataset.json
 Full data schema [overview](https://www.sciencebase.gov/catalog/item/61aa537dd34eb622f699df81) and [details](https://www.sciencebase.gov/catalog/file/get/61aa537dd34eb622f699df81?f=__disk__d0%2F63%2F53%2Fd063532049be8e1bc83d1d3047b4df1a5cb56f15&transform=1&allowOpen=true)
