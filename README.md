@@ -35,8 +35,8 @@ Note that all files below denoted with (*) have been omitted from the actual rep
 │   └── *norman_wildfires_SI_SMALL.json                 # JSON with the processed and filtered wildfire data
 ├── data_raw/                                       # Folder containing the raw data
 │   ├── oklahoma_brfss_2000_raw.csv                     # CSV with raw survey asthma / smoker data from 2000
-│   ├── oklahoma_brfss_2003-2010_raw.csv                     # CSV with raw survey asthma / smoker data from 2003-2010
-│   ├── oklahoma_brfss_2011-2023_raw.csv                     # CSV with raw survey asthma / smoker data from 2011-2023
+│   ├── oklahoma_brfss_2003-2010_raw.csv                # CSV with raw survey asthma / smoker data from 2003-2010
+│   ├── oklahoma_brfss_2011-2023_raw.csv                # CSV with raw survey asthma / smoker data from 2011-2023
 │   └── *USGS_Wildland_Fire_CombinedDataset.json        # JSON containing all of the raw wildfire data (Note this file was to large to upload, but can be downloaded directly from [here](https://www.sciencebase.gov/catalog/item/61aa537dd34eb622f699df81))
 ├── notebooks/                                      # Source code
 │   ├── data_acquisition_aqi.ipynb                      # Notebook to make the api calls to extract, store, and process the aqi data
