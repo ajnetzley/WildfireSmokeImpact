@@ -19,7 +19,33 @@ Specifically, this analyses makes API requests for AQI data from Cleveland count
 Modeling ideation in "modeling.ipynb" was performed with collaboration from fellow student Jake Flynn, while AQI Estimate analysis was performed with collaboration from fellow student Sid Gurajala. Lastly, this assignment, and significant portions of the "data_acquisition_aqi.ipynb.ipynb" and "data_acquisition_wildfire.ipnyb" files were developed by Dr. David W. McDonald for use in DATA 512, a course in the UW MS Data Science degree program. This code is provided under the [Creative Commons](https://creativecommons.org) [CC-BY license](https://creativecommons.org/licenses/by/4.0/). Revision 1.2 - September 16, 2024
 
 ## Reproducibility Guidelines
-#TODO
+To reproduce the entire analysis, follow the guide detailed below.
+
+### 1.) Wildfire Analsyis
+#### a) Download the Raw USGS Wildfire Dataset
+Visit the USGS [website]() and download the "USGS_Wildland_Fire_Combined_Dataset.json", and place it in the "data_raw/" folder of this repository.
+
+#### b) Execute the "data_acquisition_wildfire.ipynb" notebook
+Execute all the cells in "data_acquisition_wildfire.ipynb", which loads and formats the wildfire dataset into a much more compatible format.
+
+#### c) Execute the "data_acquisition_aqi.ipynb" notebook
+Execute all the cells in the "data_acquisition_aqi.ipynb", which performs the api call to extract the AQI data from the US Environmental Protection Agency (EPA) Air Quality Service (AQS) API
+
+#### d) Execute the "data_processing_wildfire.ipynb" notebook
+Execute all the cells in the "data_processing_wildfire.ipynb", which filters the wildfire data and computes the yearly smoke estimate scores.
+
+#### e) Execute the "visualization_smoke.ipynb" notebook
+Execute all the cells in the "visualization_smoke.ipynb", which generates the three part 1 output plots related to wildfire smoke.
+
+#### f) Execute the "modeling_smoke.ipynb" notebook
+Execute all the cells in the "modeling_smoke.ipynb", which performs the modeling and forecasting of the smoke estimate.
+
+### 2.) Asthma Analsyis
+#### a) Execute the "data_acquisition_asthma.ipynb" notebook
+Since the raw asthma data is already contained in the "data_raw/" folder, start by executing the "data_processing_asthma.ipynb", which cleans, parses, and performs preliminary EDA on the asthma data.
+
+#### b) Execute the "modeling_asthma.ipynb" notebook
+Execute all the cells in the "modeling_asthma.ipynb", which creates the linear model to predict smoke estimate from asthma, and forecasts the asthma predicitons.
 
 ## Repository Structure
 Note that all files below denoted with (*) have been omitted from the actual repository as they are too large to upload on git. For the files in the data_intermediate, a subset denoted by the suffix "_SMALL" has been included for representation purposes. 
@@ -199,7 +225,6 @@ In their raw form as downloaded from the OK2Share website, these datasets were n
 |                         | CI       |          | ( 76.7 - 82.3)    | ( 17.7 - 23.3) | n/a
 
 ```
-
 
 #### USGS_Wildland_Fire_Combined_Dataset.json
 Full data schema [overview](https://www.sciencebase.gov/catalog/item/61aa537dd34eb622f699df81) and [details](https://www.sciencebase.gov/catalog/file/get/61aa537dd34eb622f699df81?f=__disk__d0%2F63%2F53%2Fd063532049be8e1bc83d1d3047b4df1a5cb56f15&transform=1&allowOpen=true)
