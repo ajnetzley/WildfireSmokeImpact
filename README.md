@@ -71,6 +71,7 @@ Note that all files below denoted with (*) have been omitted from the actual rep
 │   ├── modeling_asthma.ipynb                           # Notebook to generate the linear regression prediction model, and forecast asthma from the smoke estimate
 │   ├── modeling_smoke.ipynb                            # Notebook to perform the predictive modeling of the smoke estimates 
 │   └── visualization_smoke.ipynb                       # Notebook to perform the plotting of the three smoke figures from the original analysis
+├── final_report.pdf                                # The comprehensive final report
 ├── LICENSE                                         # License documentation
 ├── .gitignore                                      # git ignore for the repo
 └── README.md                                       # README for the repo
