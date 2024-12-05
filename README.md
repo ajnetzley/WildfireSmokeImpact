@@ -1,11 +1,7 @@
 # Wildfire Smoke Impact - Norman, OK
 
 ## Overview
-This repository contains the contents of an analysis into the impact of wildfire smoke on the city of Norman, OK. Specifically, we extract wildfire data from the [USGS repository](https://www.sciencebase.gov/catalog/item/61aa537dd34eb622f699df81), historical AQI data from the US Environmental Protection Agency (EPA) Air Quality Service (AQS) [API](https://aqs.epa.gov/aqsweb/documents/data_api.html) build a predictive model to estimate smoke from 2025-2050, and ultimately create three figures:
-- Figure 1: Histogram of Wildfire acreage by Proximity to Norman, OK
-- Figure 2: Burn Acreage from 1961-2021 within 650 miles of Norman, OK
-- Figure 3: Smoke and AQI Estimates from 1961-2021 in Norman, OK
-
+This repository contains the contents of an analysis into the impact of wildfire smoke and the potential relationship to asthma rates in the city of Norman, OK. Specifically, we extract wildfire data from the [USGS repository](https://www.sciencebase.gov/catalog/item/61aa537dd34eb622f699df81) and historical AQI data from the US Environmental Protection Agency (EPA) Air Quality Service (AQS) [API](https://aqs.epa.gov/aqsweb/documents/data_api.html) build a perform EDA on wildfires in and around Norman, and develop a predictive model to estimate smoke from 2025-2050, and ultimately create three figures. Additionally, we extract survey asthma data from the Oklahoma State Department of Health Statistics [website](https://www.health.state.ok.us/index.shtml), and develop a predictive model to forecast asthma rates in Norman using the forecasted smoke estimates. A full project report is located in the repository titled "final_report.pdf".
 
 ## Licenses and API Documentation
 ### Wildfire Data Acquisition
@@ -15,15 +11,18 @@ To perform the wildfire smoke analysis, the complete [wildfire dataset](https://
 The AQI Data Acquistion notebook extracted the historical AQI data from the US Environmental Protection Agency (EPA) Air Quality Service (AQS) API. The [documentation](https://aqs.epa.gov/aqsweb/documents/data_api.html) for the API provides definitions of the different call parameter and examples of the various calls that can be made to the API.
 Specifically, this analyses makes API requests for AQI data from Cleveland county (home to Norman), and nearby Oklahoma county (home to Oklahoma City) in Oklahoma. 
 
+### Asthma Data Acquisition
+The asthma data acquisition involved querying the Oklahoma State Department of Health Statistics [website](https://www.health.state.ok.us/index.shtml). This data is licensed for usage in  "...monitoring the health of the people of Oklahoma" (full license [here](https://www.health.state.ok.us/)). The extracted data is present in the "data_raw/" folder of this repository, consisting of the extracted asthma and smoking data from 2000, 2003-2010, and 2011-2023.
+
 ### Contributions
-Modeling ideation in "modeling.ipynb" was performed with collaboration from fellow student Jake Flynn, while AQI Estimate analysis was performed with collaboration from fellow student Sid Gurajala. Lastly, this assignment, and significant portions of the "data_acquisition_aqi.ipynb.ipynb" and "data_acquisition_wildfire.ipnyb" files were developed by Dr. David W. McDonald for use in DATA 512, a course in the UW MS Data Science degree program. This code is provided under the [Creative Commons](https://creativecommons.org) [CC-BY license](https://creativecommons.org/licenses/by/4.0/). Revision 1.2 - September 16, 2024
+Modeling ideation in "asthma_modeling.ipynb" was performed with collaboration from fellow student Jake Flynn, while AQI Estimate analysis was performed with collaboration from fellow student Sid Gurajala. Lastly, this assignment, and significant portions of the "data_acquisition_aqi.ipynb.ipynb" and "data_acquisition_wildfire.ipnyb" files were developed by Dr. David W. McDonald for use in DATA 512, a course in the UW MS Data Science degree program. This code is provided under the [Creative Commons](https://creativecommons.org) [CC-BY license](https://creativecommons.org/licenses/by/4.0/). Revision 1.2 - September 16, 2024
 
 ## Reproducibility Guidelines
 To reproduce the entire analysis, follow the guide detailed below.
 
-### 1.) Wildfire Analsyis
+### 1.) Wildfire Analysis
 #### a) Download the Raw USGS Wildfire Dataset
-Visit the USGS [website]() and download the "USGS_Wildland_Fire_Combined_Dataset.json", and place it in the "data_raw/" folder of this repository.
+Visit the USGS [website](https://www.sciencebase.gov/catalog/item/61aa537dd34eb622f699df81) and download the "USGS_Wildland_Fire_Combined_Dataset.json", and place it in the "data_raw/" folder of this repository.
 
 #### b) Execute the "data_acquisition_wildfire.ipynb" notebook
 Execute all the cells in "data_acquisition_wildfire.ipynb", which loads and formats the wildfire dataset into a much more compatible format.
@@ -40,7 +39,7 @@ Execute all the cells in the "visualization_smoke.ipynb", which generates the th
 #### f) Execute the "modeling_smoke.ipynb" notebook
 Execute all the cells in the "modeling_smoke.ipynb", which performs the modeling and forecasting of the smoke estimate.
 
-### 2.) Asthma Analsyis
+### 2.) Asthma Analysis
 #### a) Execute the "data_acquisition_asthma.ipynb" notebook
 Since the raw asthma data is already contained in the "data_raw/" folder, start by executing the "data_processing_asthma.ipynb", which cleans, parses, and performs preliminary EDA on the asthma data.
 
